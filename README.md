@@ -1,4 +1,4 @@
-# alien-invasion-clone (Pygame)
+# Space Invaders Clone (Pygame)
 
 A **classic arcade-style space shooter** built with **Python** and **Pygame**.
 
