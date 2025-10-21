@@ -34,26 +34,26 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 
 `alien-invasion/`<br>
 `│`<br>
-`├── alien_invasion.py   # Main entry point; runs the game loop`<br>
-`├── alien.py            # Defines the Alien class and movement behavior`<br>
-`├── bullet.py           # Manages bullets fired by the player`<br>
-`├── button.py           # Handles Play button functionality`<br>
-`├── game_stats.py       # Tracks score, lives, and game state`<br>
-`├── scoreboard.py       # Displays score and high score`<br>
-`├── settings.py         # Holds configurable game settings`<br>
-`├── ship.py             # Controls player movement and rendering`<br>
+`├── space_invaders.py   # Main entry point`<br>
+`├── invader.py          # Invader class and movement behavior`<br>
+`├── bullet.py           # Player projectiles`<br>
+`├── button_ui.py        # Handles button functionality`<br>
+`├── game_stats.py       # Tracks stats and progress`<br>
+`├── scoreboard_ui.py    # Displays score and highscore`<br>
+`├── config.py           # Holds configurable game settings`<br>
+`├── starfighter.py             # Controls player movement and rendering`<br>
 `│`<br>
 `├── images/             # Sprite and background assets`<br>
-`│   ├── alien1_frame1.png`<br>
-`│   ├── alien1_frame2.png`<br>
-`│   ├── alien2_frame1.png`<br>
-`│   ├── alien2_frame2.png`<br>
-`│   ├── alien3_frame1.png`<br>
-`│   ├── alien3_frame2.png`<br>
+`│   ├── invader1_frame1.png`<br>
+`│   ├── invader1_frame2.png`<br>
+`│   ├── invader2_frame1.png`<br>
+`│   ├── invader2_frame2.png`<br>
+`│   ├── invader3_frame1.png`<br>
+`│   ├── invader3_frame2.png`<br>
 `│   ├── background_image.png`<br>
-`│   ├── ship.png`<br>
-`│   ├── ship_white.png`<br>
-`│   └── ships_left.png`<br>
+`│   ├── ships_left.png`<br>
+`│   ├── space-invaders-preview.png`<br>
+`│   └── starfighter.png`<br>
 `│`<br>
 `├── font/`<br>
 `│   └── RetroGaming.ttf`<br>
@@ -62,7 +62,7 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 
 ## 🖥️ Technologies Used
 
-- **Python 3.x**
+- **Python 3.10**
 - **Pygame** – game engine for rendering and input handling
 - **OOP principles** – modular design for reusability
 - **Event-driven architecture** – smooth input and updates
@@ -70,7 +70,7 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 ## 📦 Installation
 
 1. Clone the repository:<br>
-  `git clone https://github.com/MarkMile/alien-invasion-clone.git`<br>
+  `git clone https://github.com/MarkMile/space-invaders-clone.git`<br>
   `cd alien-invasion-clone`
 
 3. Install dependencies:<br>
@@ -90,7 +90,7 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 
 ## 📘 Gameplay Instructions
 
-1. Launch the game using `python alien_invasion.py`.
+1. Launch the game using `python space_invaders.py`.
 2. Click the Play button to begin.
 3. Move the ship left and right using the arrow keys.
 4. Press SPACE to fire bullets and destroy incoming aliens.
@@ -98,6 +98,8 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 6. The game ends when all lives are lost.
 
 ## 📷 Preview
+
+![space-invaders-preview](https://github.com/MarkMile/space-invaders-clone/blob/main/images/space-invaders-preview.png?raw=true)
 
 ## 🛠️ Future Improvements
 
