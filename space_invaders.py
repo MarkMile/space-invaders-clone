@@ -219,8 +219,8 @@ class SpaceInvaders:
         Create an invader and add it to the fleed at a specified position.
 
         Args:
-            current_x (int): The x-coordinate for the invader's position.
-            current_y (int): The y-coordinate for the invader's position.
+            current_x (int): The x-coordinate for the invaders position.
+            current_y (int): The y-coordinate for the invaders position.
             row_number (int): The current row number of the invader.
         """
         new_invader: Invader = self.load_invader_image(row_number)
@@ -329,7 +329,7 @@ class SpaceInvaders:
             self.score_board.check_highscore()
 
         if not self.invaders:
-            # All invader destroyed: reset fleet and advance level.
+            # All invaders destroyed: reset fleet and advance level.
             self.bullets.empty()
             self.create_invaders_fleet()
             self.settings.increase_speed()
@@ -366,7 +366,7 @@ class SpaceInvaders:
         """
         Check if any invaders have reached the bottom of the screen.
 
-        if so, treat it as if the starfighter got hit.
+        If so, treat it as if the starfighter got hit.
         """
         for invader in self.invaders.sprites():
             if invader.rect.bottom >= self.settings.screen_height:
