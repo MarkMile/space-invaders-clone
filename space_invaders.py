@@ -239,10 +239,11 @@ class SpaceInvaders:
         the screen. The number of rows and spacing depend on the configured
         invaders width, height and screen dimensions.
         """
-        invaders_width = self.settings.invaders_png_width
-        invaders_height = self.settings.invaders_png_height
+        invaders_width: int = self.settings.invaders_png_width
+        invaders_height: int = self.settings.invaders_png_height
 
-        current_x, current_y = invaders_width, 2 * invaders_height
+        current_x: int = invaders_width
+        current_y: int = 2 * invaders_height
         for row in range(5):
             while current_x < (self.settings.screen_width - 2 * invaders_width):
                 self.create_invader(current_x, current_y, row)
