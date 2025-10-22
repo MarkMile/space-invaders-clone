@@ -223,7 +223,7 @@ class SpaceInvaders:
             current_y (int): The y-coordinate for the invader's position.
             row_number (int): The current row number of the invader.
         """
-        new_invader = self.load_invader_image(row_number)
+        new_invader: Invader = self.load_invader_image(row_number)
         new_invader.x = current_x
         new_invader.rect.x = current_x
         new_invader.rect.y = current_y
