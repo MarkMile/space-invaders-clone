@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 class Starfighter(Sprite):
     """A class to manage the starfighter."""
 
-    def __init__(self, game_instance: SpaceInvaders, starfighter_image: str) -> None:
+    def __init__(self, game_instance: SpaceInvaders, image_path: str) -> None:
         super().__init__()
         """ 
         Initialize the starfighter and set its starting position. 
@@ -22,14 +22,14 @@ class Starfighter(Sprite):
         Args:
             game_instance (SpaceInvaders): The current game instance, providing
             access to the screen and settings.
-            starfighter_image (str): The file path to the starfighter image.
+            image_path (str): The file path to the starfighter image.
         """
         self.screen: pygame.Surface = game_instance.screen
         self.screen_rect: pygame.rect = game_instance.screen.get_rect()
         self.settings: GameConfiguration = game_instance.settings
 
         # Load the starfighter image and get its rect.
-        self.image: pygame.Surface = pygame.image.load(starfighter_image)
+        self.image: pygame.Surface = pygame.image.load(image_path)
         self.rect: pygame.rect = self.image.get_rect()
 
         # Start each new starfighter at the bottom center of the screen.
