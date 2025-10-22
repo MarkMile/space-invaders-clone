@@ -41,7 +41,7 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 `├── game_stats.py       # Tracks stats and progress`<br>
 `├── scoreboard_ui.py    # Displays score and highscore`<br>
 `├── config.py           # Holds configurable game settings`<br>
-`├── starfighter.py             # Controls player movement and rendering`<br>
+`├── starfighter.py      # Controls player movement and rendering`<br>
 `│`<br>
 `├── images/             # Sprite and background assets`<br>
 `│   ├── invader1_frame1.png`<br>
