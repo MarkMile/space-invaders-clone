@@ -24,9 +24,6 @@ class Bullet(Sprite):
         Args:
             game_instance (SpaceInvaders): The current game instance, providing
             access to the screen, settings, and starfighter position.
-
-        Returns:
-            None
         """
         super().__init__()
         self.screen: pygame.Surface = game_instance.screen
@@ -48,12 +45,6 @@ class Bullet(Sprite):
 
         Updates the bullet's position based on its speed and applies the change
         to the associated rectagle for rendering.
-
-        Args:
-            None
-
-        Returns:
-            None
         """
         self.y -= self.settings.bullet_speed
         self.rect.y = self.y
@@ -63,11 +54,5 @@ class Bullet(Sprite):
         Draw the bullet to the screen.
 
         Renders a filled rectangle representing the bullet at its current position.
-
-        Args:
-            None
-
-        Returns:
-            None
         """
         pygame.draw.rect(self.screen, self.color, self.rect)
