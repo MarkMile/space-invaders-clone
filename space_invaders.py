@@ -34,7 +34,7 @@ class SpaceInvaders:
 
         pygame.display.set_caption("Space Invaders Clone")
 
-        # Start Space Invaders in an active state until the player starts the game.
+        # Set the game in inactive state until the player starts the game.
         self.game_is_active: bool = False
 
         # Button that starts a new game when clicked.
