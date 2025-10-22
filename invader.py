@@ -45,7 +45,7 @@ class Invader(Sprite):
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        # Store the invader's precise horisontal position as a float.
+        # Store the invaders precise horisontal position as a float.
         self.x: float = float(self.rect.x)
 
     def update(self) -> None:
