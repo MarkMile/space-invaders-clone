@@ -63,7 +63,7 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 
 ## 🖥️ Technologies Used
 
-- **Python 3.10**
+- **Python 3.10+**
 - **Pygame** – game engine for rendering and input handling
 - **OOP principles** – modular design for reusability
 - **Event-driven architecture** – smooth input and updates
