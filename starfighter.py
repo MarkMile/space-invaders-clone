@@ -1,4 +1,3 @@
-
 from __future__ import annotations  # Postpone type hint evaluation
 
 import pygame

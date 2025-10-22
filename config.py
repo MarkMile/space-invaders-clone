@@ -1,6 +1,7 @@
 import pygame
 from typing import Tuple
 
+
 class GameConfiguration:
     """A class to store all settings for Space Invaders."""
 
@@ -13,7 +14,7 @@ class GameConfiguration:
         self.screen_width: int = 1200
         self.screen_height: int = 800
         self.bg_color: Tuple[int, int, int] = (19, 19, 19)
-        self.bg_image: pygame.Surface = pygame.image.load('images/background_image.png')
+        self.bg_image: pygame.Surface = pygame.image.load("images/background_image.png")
 
         # Starfighter settings
         self.starfighter_limit: int = 3
@@ -33,7 +34,7 @@ class GameConfiguration:
 
         # Game progress settings
         self.speedup_scale: float = 1.1  # How quickly the game speeds up
-        self.score_scale: float = 1.5    # How quickly the invader's point values increase
+        self.score_scale: float = 1.5  # How quickly the invader's point values increase
 
         self.initialize_dynamic_settings()
 
@@ -54,7 +55,7 @@ class GameConfiguration:
 
     def increase_speed(self) -> None:
         """
-        Increase game speed and invader point values to make the gameplay 
+        Increase game speed and invader point values to make the gameplay
         progressively harder.
         """
         self.starfighter_speed *= self.speedup_scale

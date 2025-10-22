@@ -3,8 +3,9 @@ from __future__ import annotations  # Postpone type hint evaluation
 import pygame.font
 from typing import TYPE_CHECKING, Tuple
 
-if TYPE_CHECKING:   # To avoid circular imports during runtime
+if TYPE_CHECKING:  # To avoid circular imports during runtime
     from space_invaders import SpaceInvaders
+
 
 class Button:
     """Represents a clickable button in the game UI."""
@@ -21,7 +22,7 @@ class Button:
         self.screen_rect: pygame.Rect = game_instance.screen.get_rect()
 
         # Define button dimensions and properties.
-        self.width:int = 200 
+        self.width: int = 200
         self.height: int = 50
         self.text_color: Tuple[int, int, int] = (0, 0, 0)
         self.button_color: Tuple[int, int, int] = (255, 255, 255)
@@ -41,7 +42,9 @@ class Button:
         Args:
             button_text (str): The text to display on the button.
         """
-        self.text_image: pygame.Surface = self.font.render(button_text, True, self.text_color, self.button_color)
+        self.text_image: pygame.Surface = self.font.render(
+            button_text, True, self.text_color, self.button_color
+        )
         self.text_image_rect: pygame.Rect = self.text_image.get_rect()
         self.text_image_rect.center = self.rect.center
 

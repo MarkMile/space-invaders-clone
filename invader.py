@@ -14,10 +14,11 @@ class Invader(Sprite):
     """Reprepresents a single invader in the fleet."""
 
     def __init__(
-        self, game_instance: SpaceInvaders, frame_one: str, frame_two: str) -> None:
+        self, game_instance: SpaceInvaders, frame_one: str, frame_two: str
+    ) -> None:
         """
         Initialize the invader and set its starting position.
-        
+
         Args:
             game_instance (SpaceInvaders): The current game instance, providing
             access to the screen and settings.

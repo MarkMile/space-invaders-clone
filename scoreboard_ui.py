@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from config import GameConfiguration
     from game_stats import GameStats
 
+
 class Scoreboard:
     """Display and manage scoring information for Space Invaders."""
 
@@ -22,7 +23,7 @@ class Scoreboard:
             game_instance (SpaceInvaders): The current game instance, providing
         """
         self.ai_game: SpaceInvaders = game_instance
-        self.screen: pygame.Surface= game_instance.screen
+        self.screen: pygame.Surface = game_instance.screen
         self.screen_rect: pygame.rect = game_instance.screen.get_rect()
         self.settings: GameConfiguration = game_instance.settings
         self.stats: GameStats = game_instance.stats
@@ -31,7 +32,9 @@ class Scoreboard:
         self.font_color: Tuple[int, int, int] = (255, 255, 255)
         self.stage_font: pygame.font.Font = pygame.font.Font("font/RetroGaming.ttf", 20)
         self.score_font: pygame.font.Font = pygame.font.Font("font/RetroGaming.ttf", 35)
-        self.highscore_font: pygame.font.Font = pygame.font.Font("font/RetroGaming.ttf", 22)
+        self.highscore_font: pygame.font.Font = pygame.font.Font(
+            "font/RetroGaming.ttf", 22
+        )
 
         # Prepare the intial rendered images.
         self.prepare_player_score()

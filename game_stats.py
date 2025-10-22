@@ -7,6 +7,7 @@ if TYPE_CHECKING:
     from space_invaders import SpaceInvaders
     from config import GameConfiguration
 
+
 class GameStats:
     """Track statistics for Space Invaders."""
 

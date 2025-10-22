@@ -17,12 +17,12 @@ class Bullet(Sprite):
         """
         Initialize a bullet object at the starfighter's current position.
 
-        Creates a rectangular bullet object using the game's configuration 
+        Creates a rectangular bullet object using the game's configuration
         settings for color, speed and dimensions. The bullet's initial
         position is set to the starfighter's midtop position.
 
         Args:
-            game_instance (SpaceInvaders): The current game instance, providing 
+            game_instance (SpaceInvaders): The current game instance, providing
             access to the screen, settings, and starfighter position.
 
         Returns:
@@ -61,9 +61,9 @@ class Bullet(Sprite):
     def draw_bullet(self) -> None:
         """
         Draw the bullet to the screen.
-        
+
         Renders a filled rectangle representing the bullet at its current position.
-        
+
         Args:
             None
 

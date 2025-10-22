@@ -163,7 +163,7 @@ class SpaceInvaders:
     def check_play_button(self, mouse_pos: Tuple[int, int]) -> None:
         """
         Start a new game when the player clicks the Play button.
-        
+
         Args:
             mouse_pos (Tuple[int, int]): The (x, y) position of the mouse
         """
@@ -192,26 +192,32 @@ class SpaceInvaders:
     def load_invader_image(self, row_number: int) -> Invader:
         """
         Return an Invader instance with an image based on its row position.
-        
+
         Args:
             row_number (int): The current row number of the invader.
-        
+
         Returns:
             Invader: An instance of the Invader class with the appropriate image.
         """
         if row_number == 0:
-            return Invader(self, "images/invader1_frame1.png", "images/invader1_frame2.png")
-        
+            return Invader(
+                self, "images/invader1_frame1.png", "images/invader1_frame2.png"
+            )
+
         elif row_number == 1 or row_number == 2:
-            return Invader(self, "images/invader2_frame1.png", "images/invader2_frame2.png")
-        
+            return Invader(
+                self, "images/invader2_frame1.png", "images/invader2_frame2.png"
+            )
+
         else:
-            return Invader(self, "images/invader3_frame1.png", "images/invader3_frame2.png")
+            return Invader(
+                self, "images/invader3_frame1.png", "images/invader3_frame2.png"
+            )
 
     def create_invader(self, current_x: int, current_y: int, row_number: int) -> None:
         """
         Create an invader and add it to the fleed at a specified position.
-        
+
         Args:
             current_x (int): The x-coordinate for the invader's position.
             current_y (int): The y-coordinate for the invader's position.
@@ -229,7 +235,7 @@ class SpaceInvaders:
         """
         Create a fleet of invaders on the screen.
 
-        This medhod positions multiple rows of invaders evenly spaced across 
+        This medhod positions multiple rows of invaders evenly spaced across
         the screen. The number of rows and spacing depend on the configured
         invaders width, height and screen dimensions.
         """
@@ -329,7 +335,6 @@ class SpaceInvaders:
 
             self.stats.level += 1
             self.score_board.prepare_stage()
-
 
     def is_starfighter_hit(self) -> None:
         """
