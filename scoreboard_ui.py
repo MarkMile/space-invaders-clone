@@ -7,9 +7,9 @@ from typing import TYPE_CHECKING, Tuple
 
 # To avoid circular imports during runtime
 if TYPE_CHECKING:
-    from space_invaders import SpaceInvaders
-    from config import GameConfiguration
     from game_stats import GameStats
+    from config import GameConfiguration
+    from space_invaders import SpaceInvaders
 
 
 class Scoreboard:
@@ -21,8 +21,9 @@ class Scoreboard:
 
         Args:
             game_instance (SpaceInvaders): The current game instance, providing
+            access to the screen, settings, and game statistics.
         """
-        self.ai_game: SpaceInvaders = game_instance
+        self.game: SpaceInvaders = game_instance
         self.screen: pygame.Surface = game_instance.screen
         self.screen_rect: pygame.rect = game_instance.screen.get_rect()
         self.settings: GameConfiguration = game_instance.settings
@@ -111,7 +112,7 @@ class Scoreboard:
         """
         self.starfighters: pygame.sprite.Group = Group()
         for starfighter_number in range(self.stats.starfighter_left):
-            starfighter = Starfighter(self.ai_game, "images/ships_left.png")
+            starfighter = Starfighter(self.game, "images/ships_left.png")
             starfighter.rect.x = 20 + starfighter_number * (starfighter.rect.width + 10)
             starfighter.rect.y = self.highscore_rect.top
             self.starfighters.add(starfighter)
