@@ -34,7 +34,7 @@ class GameConfiguration:
 
         # Game progress settings
         self.speedup_scale: float = 1.1  # How quickly the game speeds up
-        self.score_scale: float = 1.5  # How quickly the invader's point values increase
+        self.score_scale: float = 1.5  # How quickly the invaders point values increase
 
         self.initialize_dynamic_settings()
 
