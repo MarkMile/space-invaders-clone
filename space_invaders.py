@@ -32,6 +32,7 @@ class SpaceInvaders:
             (self.settings.screen_width, self.settings.screen_height)
         )
 
+        pygame.display.set_icon(self.settings.game_icon)
         pygame.display.set_caption("Space Invaders Clone")
 
         # Set the game in inactive state until the player starts the game.
@@ -41,7 +42,7 @@ class SpaceInvaders:
         self.play_button: Button = Button(self, "play")
 
         # Game statistics and scoreboard setup.
-        self.stats: GameStats = GameStats(self)
+        self.game_stats: GameStats = GameStats(self)
         self.score_board: Scoreboard = Scoreboard(self)
 
         # Player's starfighter and sprite groups for bullets and invaders.
@@ -172,7 +173,7 @@ class SpaceInvaders:
         if button_clicked and not self.game_is_active:
             # Reset the game statistics.
             self.settings.initialize_dynamic_settings()
-            self.stats.reset_stats()
+            self.game_stats.reset_stats()
             self.score_board.prepare_player_score()
             self.score_board.prepare_stage()
             self.score_board.prep_starfighters_left()
@@ -324,7 +325,7 @@ class SpaceInvaders:
 
         if collisions:
             for invaders in collisions.values():
-                self.stats.score += self.settings.invader_points * len(invaders)
+                self.game_stats.score += self.settings.invader_points * len(invaders)
             self.score_board.prepare_player_score()
             self.score_board.check_highscore()
 
@@ -334,7 +335,7 @@ class SpaceInvaders:
             self.create_invaders_fleet()
             self.settings.increase_speed()
 
-            self.stats.level += 1
+            self.game_stats.level += 1
             self.score_board.prepare_stage()
 
     def is_starfighter_hit(self) -> None:
@@ -344,9 +345,9 @@ class SpaceInvaders:
         If starfighters remain, decrement the count, reset the fleet and starfighter position,
         and pause briefly. If no starfighters remain, end the game.
         """
-        if self.stats.starfighter_left > 0:
+        if self.game_stats.starfighter_left > 0:
             # Decrement starfighter_left.
-            self.stats.starfighter_left -= 1
+            self.game_stats.starfighter_left -= 1
             self.score_board.prep_starfighters_left()
 
             # Remove any remaining bullets and invaders.

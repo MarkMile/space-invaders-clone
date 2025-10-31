@@ -27,7 +27,7 @@ class Scoreboard:
         self.screen: pygame.Surface = game_instance.screen
         self.screen_rect: pygame.rect = game_instance.screen.get_rect()
         self.settings: GameConfiguration = game_instance.settings
-        self.stats: GameStats = game_instance.stats
+        self.stats: GameStats = game_instance.game_stats
 
         # Font and color settings for score and level elements.
         self.font_color: Tuple[int, int, int] = (255, 255, 255)

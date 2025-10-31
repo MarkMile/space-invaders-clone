@@ -14,6 +14,7 @@ class GameConfiguration:
         self.screen_width: int = 1200
         self.screen_height: int = 800
         self.bg_color: Tuple[int, int, int] = (19, 19, 19)
+        self.game_icon = pygame.image.load("images/game_icon.png")
         self.bg_image: pygame.Surface = pygame.image.load("images/background_image.png")
 
         # Starfighter settings
