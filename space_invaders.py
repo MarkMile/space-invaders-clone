@@ -1,3 +1,6 @@
+# space_invaders.py
+# A module defining the SpaceInvaders class for managing the overall game behavior.
+
 import pygame
 from sys import exit
 from time import sleep

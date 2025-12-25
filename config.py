@@ -1,3 +1,6 @@
+# config.py
+# A module defining the GameConfiguration class for storing game settings in the Space Invaders game.
+
 import pygame
 from typing import Tuple
 

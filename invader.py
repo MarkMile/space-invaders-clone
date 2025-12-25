@@ -1,3 +1,6 @@
+# invader.py
+# A module defining the Invader class for managing invaders in the Space Invaders game.
+
 from __future__ import annotations  # Postpone type hint evaluation
 
 import pygame

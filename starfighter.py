@@ -1,3 +1,6 @@
+# starfighter.py
+# A module defining the Starfighter class for managing the starfighter in the Space Invaders game
+
 from __future__ import annotations  # Postpone type hint evaluation
 
 import pygame

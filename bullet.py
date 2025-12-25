@@ -1,3 +1,6 @@
+# bullet.py
+# A module defining the Bullet class for managing bullets in the Space Invaders game.
+
 from __future__ import annotations  # Postpone type hint evaluation
 
 import pygame

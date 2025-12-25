@@ -1,3 +1,6 @@
+# scoreboard_ui.py
+# A module defining the Scoreboard class for displaying scoring information in the Space Invaders game.
+
 from __future__ import annotations  # Postpone type hint evaluation
 
 import pygame.font

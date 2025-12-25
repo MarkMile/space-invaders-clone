@@ -1,3 +1,6 @@
+# game_stats.py
+# A module defining the GameStats class for tracking game statistics in the Space Invaders game.
+
 from __future__ import annotations  # Postpone type hint evaluation
 
 from typing import TYPE_CHECKING
