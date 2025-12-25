@@ -1,7 +1,7 @@
 from __future__ import annotations  # Postpone type hint evaluation
 
 import pygame.font
-from typing import TYPE_CHECKING, Tuple
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:  # To avoid circular imports during runtime
     from space_invaders import SpaceInvaders
@@ -22,11 +22,11 @@ class Button:
         self.screen_rect: pygame.Rect = game_instance.screen.get_rect()
 
         # Define button dimensions and properties.
-        self.width: int = 200
-        self.height: int = 50
-        self.text_color: Tuple[int, int, int] = (0, 0, 0)
-        self.button_color: Tuple[int, int, int] = (255, 255, 255)
-        self.font: pygame.font.Font = pygame.font.SysFont(None, 48)
+        self.width = 200
+        self.height = 50
+        self.text_color = (0, 0, 0)
+        self.button_color = (255, 255, 255)
+        self.font = pygame.font.SysFont(None, 48)
 
         # Create button's rectangle and center it on the screen.
         self.rect = pygame.Rect(0, 0, self.width, self.height)
@@ -42,15 +42,11 @@ class Button:
         Args:
             button_text (str): The text to display on the button.
         """
-        self.text_image: pygame.Surface = self.font.render(
-            button_text, True, self.text_color, self.button_color
-        )
-        self.text_image_rect: pygame.Rect = self.text_image.get_rect()
+        self.text_image = self.font.render(button_text, True, self.text_color, self.button_color)
+        self.text_image_rect = self.text_image.get_rect()
         self.text_image_rect.center = self.rect.center
 
     def draw_button(self) -> None:
-        """
-        Draw the button on the screen, including its background and text.
-        """
+        """Draw the button and its text to the screen."""
         self.screen.fill(self.button_color, self.rect)
         self.screen.blit(self.text_image, self.text_image_rect)

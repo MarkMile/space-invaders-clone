@@ -31,9 +31,7 @@ class Bullet(Sprite):
         self.color: Tuple[int, int, int] = self.settings.bullet_color
 
         # Create a bullet rect at (0, 0) and set the correct position.
-        self.rect: pygame.rect = pygame.Rect(
-            0, 0, self.settings.bullet_width, self.settings.bullet_height
-        )
+        self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
         self.rect.midtop = game_instance.starfighter.rect.midtop
 
         # Store the bullet's vertical position as a float for fine control.
