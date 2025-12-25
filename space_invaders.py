@@ -13,22 +13,16 @@ from config import GameConfiguration
 
 
 class SpaceInvaders:
-    """Overall class to manage game assets and behavior."""
+    """Overall class to manage game assets and behavior for a Space Invaders clone."""
 
     def __init__(self) -> None:
-        """
-        Initialize the game, and create game resources.
-
-        This sets up the display, initializes pygame, creates the game settings,
-        statistics, scoreboard, and initializes all major game objects such as
-        the player's starfighter, bullet group, and invaders fleet.
-        """
+        """Initialize the game, and create game resources."""
         pygame.init()
-        self.settings: GameConfiguration = GameConfiguration()
-        self.clock: pygame.time.Clock = pygame.time.Clock()
+        self.settings = GameConfiguration()
+        self.clock = pygame.time.Clock()
 
         # Main display surface for the game window.
-        self.screen: pygame.Surface = pygame.display.set_mode(
+        self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
 
@@ -36,30 +30,25 @@ class SpaceInvaders:
         pygame.display.set_caption("Space Invaders Clone")
 
         # Set the game in inactive state until the player starts the game.
-        self.game_is_active: bool = False
+        self.game_is_active = False
 
         # Button that starts a new game when clicked.
-        self.play_button: Button = Button(self, "play")
+        self.play_button = Button(self, "play")
 
         # Game statistics and scoreboard setup.
-        self.game_stats: GameStats = GameStats(self)
-        self.score_board: Scoreboard = Scoreboard(self)
+        self.game_stats = GameStats(self)
+        self.score_board = Scoreboard(self)
 
         # Player's starfighter and sprite groups for bullets and invaders.
-        self.starfighter: Starfighter = Starfighter(self, "images/starfighter.png")
-        self.bullets: pygame.sprite.Group = pygame.sprite.Group()
-        self.invaders: pygame.sprite.Group = pygame.sprite.Group()
+        self.starfighter = Starfighter(self, "images/starfighter.png")
+        self.bullets = pygame.sprite.Group()
+        self.invaders = pygame.sprite.Group()
 
         # Create the initial fleet of invaders.
         self.create_invaders_fleet()
 
     def run_the_game(self) -> None:
-        """
-        Start the main loop for the Space Invaders game.
-
-        This continuosly checks for user input, updates game elements (starfighter, bullets, invaders),
-        and refreshes the screen at a consistent frame rate.
-        """
+        """Start the main loop for the game."""
         while True:
             self.check_events()
 
@@ -72,12 +61,7 @@ class SpaceInvaders:
             self.clock.tick(60)
 
     def update_screen(self) -> None:
-        """
-        Update images on the screen, and flip to the new screen.
-
-        Draws all active game elements including the starfighter, bullets, invaders,
-        scoreboard, and play button (if the game is inactive).
-        """
+        """Update images on the screen and flip to the new screen."""
         self.screen.blit(self.settings.bg_image, (0, 0))
 
         # Draw bullets.
@@ -102,12 +86,7 @@ class SpaceInvaders:
         pygame.display.flip()
 
     def check_events(self) -> None:
-        """
-        Respond to keypresses and mouse events.
-
-        Handles player input such as quitting the game, moving the starfighter,
-        firing bullets, and clicking the play button.
-        """
+        """Respond to keypresses and mouse events."""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -125,10 +104,7 @@ class SpaceInvaders:
 
     def check_keydown_events(self, event: pygame.event.Event) -> None:
         """
-        Respond to keypress event.
-
-        Handless movement keys (left/right), quitting the game ('q'),
-        and firing bullets (spacebar).
+        Respond to keypress events.
 
         Args:
             event (pygame.event.Event): The event object representing the keypress.
@@ -149,8 +125,6 @@ class SpaceInvaders:
     def check_keyup_events(self, event: pygame.event.Event) -> None:
         """
         Respond to key release events.
-
-        Stops starfighter movement when the left or right arrow keys are released.
 
         Args:
             event (pygame.event.Event): The event object representing the key release.
@@ -233,13 +207,7 @@ class SpaceInvaders:
         self.invaders.add(new_invader)
 
     def create_invaders_fleet(self) -> None:
-        """
-        Create a fleet of invaders on the screen.
-
-        This medhod positions multiple rows of invaders evenly spaced across
-        the screen. The number of rows and spacing depend on the configured
-        invaders width, height and screen dimensions.
-        """
+        """Create a full fleet of invaders and arrange them on the screen."""
         invaders_width: int = self.settings.invaders_png_width
         invaders_height: int = self.settings.invaders_png_height
 
@@ -255,30 +223,20 @@ class SpaceInvaders:
             current_y += 2 * invaders_height
 
     def check_fleet_edges(self) -> None:
-        """
-        Check if any invader has reached the edge of the screen and
-        respond appropriately by changing the fleet's direction.
-        """
+        """Respond appropriately if any invaders have reached an edge of the screen."""
         for invader in self.invaders:
             if invader.check_edges():
                 self.change_fleet_direction()
                 break
 
     def change_fleet_direction(self) -> None:
-        """
-        Drop the entire fleet one level and change the fleet's direction.
-        """
+        """Drop the entire fleet one level and change the fleet's direction."""
         for invader in self.invaders.sprites():
             invader.rect.y += self.settings.fleet_drop_speed
         self.settings.fleet_direction *= -1
 
     def update_invaders(self) -> None:
-        """
-        Update the positions of all the invaders in the fleet.
-
-        Handles fleet movement, detects collisions between invaders and the starfighter,
-        and checks if any invaders have reached the bottom of the screen.
-        """
+        """Update the positions of all invaders in the fleet."""
         self.check_fleet_edges()
         self.invaders.update()
 
@@ -290,21 +248,13 @@ class SpaceInvaders:
         self.check_invaders_bottom()
 
     def fire_bullet(self) -> None:
-        """
-        Fire a bullet if the limit on bullets has not been reached yet.
-
-        Creates a new bullet and adds it to the bullets group.
-        """
+        """Fire a bullet if the limit on bullets has not been reached yet."""
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
 
     def update_bullets(self) -> None:
-        """
-        Update bullet positions and remove bullets that have disappeared.
-
-        Also checks for bullet-invader collisions.
-        """
+        """Update position of bullets and get rid of old bullets."""
         self.bullets.update()
 
         # Remove bullets that have gone off the top of the screen.
@@ -364,11 +314,7 @@ class SpaceInvaders:
             pygame.mouse.set_visible(True)
 
     def check_invaders_bottom(self) -> None:
-        """
-        Check if any invaders have reached the bottom of the screen.
-
-        If so, treat it as if the starfighter got hit.
-        """
+        """Check if any invaders have reached the bottom of the screen."""
         for invader in self.invaders.sprites():
             if invader.rect.bottom >= self.settings.screen_height:
                 self.is_starfighter_hit()

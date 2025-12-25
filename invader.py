@@ -31,7 +31,7 @@ class Invader(Sprite):
 
         # List storing two frames for the invader animation.
         self.invader_frames: List[pygame.Surface] = []
-        self.current_sprite: int = 0
+        self.current_sprite = 0
 
         # Append the frame to the invader_frames list to use for animation.
         self.invader_frames.append(pygame.image.load(frame_one))
@@ -39,19 +39,17 @@ class Invader(Sprite):
 
         # Load invader frame depending on the current_sprite variable and set the rect.
         self.image: pygame.Surface = self.invader_frames[self.current_sprite]
-        self.rect: pygame.Rect = self.image.get_rect()
+        self.rect = self.image.get_rect()
 
         # Start each new invader near the top-left of the screen.
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
         # Store the invaders precise horisontal position as a float.
-        self.x: float = float(self.rect.x)
+        self.x = float(self.rect.x)
 
     def update(self) -> None:
-        """
-        Move the invader horizontally based on the fleet direction and animate it.
-        """
+        """Move the invader right or left across the screen."""
         self.x += self.settings.invader_speed * self.settings.fleet_direction
         self.rect.x = self.x
         self.animate_invader()
@@ -63,14 +61,12 @@ class Invader(Sprite):
         Returns:
             bool: True if the invader is at the screen edge, False otherwise.
         """
-        screen_rect: pygame.Rect = self.screen.get_rect()
+        screen_rect = self.screen.get_rect()
         return (self.rect.right >= screen_rect.right) or (self.rect.left <= 0)
 
     def animate_invader(self) -> None:
-        """
-        Animate the invader by cycling through its frames at a controlled speed.
-        """
-        # # Control the animation (lower value = slower animation).
+        """Handle the animation of the invader by cycling through its frames."""
+        # Control the animation (lower value = slower animation).
         self.current_sprite += 0.02
 
         # Reset frame index when the end is reached.

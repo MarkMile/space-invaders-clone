@@ -23,15 +23,12 @@ class GameStats:
         self.reset_stats()
 
         # High score persists across game sessions.
-        self.highscore: int = 0
+        self.highscore = 0
 
     def reset_stats(self) -> None:
         """
-        Reset statistics that can change during the game.
-
-        This method is called when a new game starts to reset the player's
-        starfighter lives, score, and level.
+        Reset statistics that can change during the game (Called when starting a new game.).
         """
         self.starfighter_left: int = self.settings.starfighter_limit
-        self.score: int = 0
-        self.level: int = 1
+        self.score = 0
+        self.level = 1
