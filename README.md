@@ -4,22 +4,16 @@ A **classic arcade-style space shooter** built with **Python** and **Pygame**.
 
 Dodge incoming enemies, fire lasers, and try to survive as long as you can while racking up points.
 
-## 💡 Project Motivation
+## Features
 
-I built this project to deepen my understanding of game loops, object-oriented design, and Pygame mechanics — all while recreating one of my favorite classic arcade experiences.
+- Smooth Pygame graphics and animation
+- Laser shooting and alien collision detection
+- Multiple alien types and wave progression
+- Game stats tracking and scoreboard
+- Start button and game-over screen
+- Modular, extensible architecture (easy to add new features)
 
-It’s a fun and interactive way to practice real-time rendering, collision detection, and animation in Python.
-
-## 🚀 Features
-
-- 🛸 Smooth Pygame graphics and animation
-- 💥 Laser shooting and alien collision detection
-- 👾 Multiple alien types and wave progression
-- 🧠 Game stats tracking and scoreboard
-- 🔘 Start button and game-over screen
-- ⚙️ Modular, extensible architecture (easy to add new features)
-
-## 🧩 How It Works
+## How It Works
 
 The game runs inside a **main game loop**, which:
 
@@ -30,7 +24,7 @@ The game runs inside a **main game loop**, which:
 
 When all aliens are destroyed, a new wave spawns — faster and harder. The player loses if an alien reaches the bottom or the ship is hit.
 
-## 🗂️ Project Structure
+## Project Structure
 ```bash
 alien-invasion/
 │
@@ -62,14 +56,14 @@ alien-invasion/
 └── README.md
 ```
 
-## 🖥️ Technologies Used
+## Technologies Used
 
 - **Python 3.10+**
 - **Pygame** – game engine for rendering and input handling
 - **OOP principles** – modular design for reusability
 - **Event-driven architecture** – smooth input and updates
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:<br>
 ```bash
@@ -84,7 +78,7 @@ pip install pygame
 ```bash
 python alien_invasion.py
 ```
-## 🕹️ Controls
+## Controls
 
 | Key     | Action                                    |
 | ------- | ----------------------------------------- |
@@ -93,7 +87,7 @@ python alien_invasion.py
 | Q       | Quit the game                             |
 | Mouse   | Click “Play” to start or restart the game |
 
-## 📘 Gameplay Instructions
+## Gameplay Instructions
 
 1. Launch the game using `python space_invaders.py`.
 2. Click the Play button to begin.
@@ -102,16 +96,10 @@ python alien_invasion.py
 5. Earn points for each alien destroyed — higher levels spawn faster enemies.
 6. The game ends when all lives are lost.
 
-## 📷 Preview
+## Preview
 
 ![space-invaders-preview](https://github.com/MarkMile/space-invaders-clone/blob/main/images/space-invaders-preview.png?raw=true)
 
-## 🛠️ Future Improvements
-
-- Add sound effects and background music 🎵
-- Include boss fights or power-ups
-- Save high scores between sessions
-
-## 🧑‍💻 Author
+## Author
 **Marko Miletic**<br>
-📫[LinkedIn](https://www.linkedin.com/in/marko1987/)
+[LinkedIn](https://www.linkedin.com/in/marko1987/)
