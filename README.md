@@ -31,35 +31,36 @@ The game runs inside a **main game loop**, which:
 When all aliens are destroyed, a new wave spawns — faster and harder. The player loses if an alien reaches the bottom or the ship is hit.
 
 ## 🗂️ Project Structure
-
-`alien-invasion/`<br>
-`│`<br>
-`├── space_invaders.py   # Main entry point`<br>
-`├── invader.py          # Invader class and movement behavior`<br>
-`├── bullet.py           # Player projectiles`<br>
-`├── button_ui.py        # Handles button functionality`<br>
-`├── game_stats.py       # Tracks stats and progress`<br>
-`├── scoreboard_ui.py    # Displays score and highscore`<br>
-`├── config.py           # Holds configurable game settings`<br>
-`├── starfighter.py      # Controls player movement and rendering`<br>
-`│`<br>
-`├── images/             # Sprite and background assets`<br>
-`│   ├── invader1_frame1.png`<br>
-`│   ├── invader1_frame2.png`<br>
-`│   ├── invader2_frame1.png`<br>
-`│   ├── invader2_frame2.png`<br>
-`│   ├── invader3_frame1.png`<br>
-`│   ├── invader3_frame2.png`<br>
-`│   ├── background_image.png`<br>
-`│   ├── ships_left.png`<br>
-`│   ├── space-invaders-preview.png`<br>
-`│   └── starfighter.png`<br>
-`│`<br>
-`├── font/`<br>
-`│   └── RetroGaming.ttf`<br>
-`│`<br>
-`├── requirements.txt    # Project dependencies` <br>
-`└── README.md`<br>
+```bash
+alien-invasion/
+│
+├── space_invaders.py   # Main entry point
+├── invader.py          # Invader class and movement behavior
+├── bullet.py           # Player projectiles
+├── button_ui.py        # Handles button functionality
+├── game_stats.py       # Tracks stats and progress
+├── scoreboard_ui.py    # Displays score and highscore
+├── config.py           # Holds configurable game settings
+├── starfighter.py      # Controls player movement and rendering
+│
+├── images/             # Sprite and background assets
+│   ├── invader1_frame1.png
+│   ├── invader1_frame2.png
+│   ├── invader2_frame1.png
+│   ├── invader2_frame2.png
+│   ├── invader3_frame1.png
+│   ├── invader3_frame2.png
+│   ├── background_image.png
+│   ├── ships_left.png
+│   ├── space-invaders-preview.png
+│   └── starfighter.png
+│
+├── font/
+│   └── RetroGaming.ttf
+│
+├── requirements.txt    # Project dependencies
+└── README.md
+```
 
 ## 🖥️ Technologies Used
 
@@ -71,15 +72,18 @@ When all aliens are destroyed, a new wave spawns — faster and harder. The play
 ## 📦 Installation
 
 1. Clone the repository:<br>
-  `git clone https://github.com/MarkMile/space-invaders-clone.git`<br>
-  `cd alien-invasion-clone`
-
+```bash
+git clone https://github.com/MarkMile/space-invaders-clone.git
+cd alien-invasion-clone
+```
 3. Install dependencies:<br>
-  `pip install pygame`
-
+```bash
+pip install pygame
+```
 4. Run the game:<br>
-  `python alien_invasion.py`
-
+```bash
+python alien_invasion.py
+```
 ## 🕹️ Controls
 
 | Key     | Action                                    |
